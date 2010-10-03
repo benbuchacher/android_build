@@ -1079,12 +1079,12 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(OTATOOLS)
 	   --override_device=$(override_device) \
            $(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: otapackage bacon
+.PHONY: otapackage superf
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
-bacon: otapackage
+superf: otapackage
 	$(hide) \
 		WANT_SQUASHFS=$(WANT_SQUASHFS) \
-		./vendor/cyanogen/tools/squisher
+		./vendor/superF/tools/squisher
 
 endif    # TARGET_DEVICE != generic
 endif    # TARGET_PRODUCT != sdk
